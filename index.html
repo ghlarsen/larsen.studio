@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Shipping Visualizer - Multi-Goal Cart Gamification for Shopify</title>
+    <meta name="description" content="Turn every cart into a quest. Beautiful multi-goal progress tracking with free shipping, gifts, discounts & more. Auto-detects shipping zones. Zero config needed. Proven to increase AOV.">
+    <meta name="keywords" content="shopify app, cart goals, free shipping visualizer, gamified checkout, progress bar, cart upsell, shopify multi-goal, cart rewards, shopify gamification">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Shipping Visualizer - Multi-Goal Cart Gamification">
+    <meta property="og:description" content="Turn every cart into a quest with beautiful multi-goal progress tracking. Free shipping, gifts, discounts & more.">
+    <meta property="og:url" content="https://larsen.studio">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Shipping Visualizer - Multi-Goal Cart Gamification">
+    <meta name="twitter:description" content="Turn every cart into a quest with beautiful multi-goal progress tracking.">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Turn Every Cart Into a Quest</h1>
+                <p class="hero-subtitle">Multi-goal progress tracking that makes customers chase rewards. Free shipping → Free gifts → Discounts → Gift cards. Layer incentives, watch AOV climb.</p>
+                <a href="#beta-signup" class="cta-button cta-primary">Join Free Beta — Premium Forever</a>
+            </div>
+            <div class="hero-visual">
+                <div class="visualizer-preview-wrapper">
+                    <div class="preview-cart-value">
+                        Cart Total: <strong id="cartValue">$0.00</strong>
+                    </div>
+
+                    <div class="shipping-visualizer-demo">
+                        <!-- Goal 1: Free Shipping -->
+                        <div class="visualizer-goal" data-threshold="50" data-icon="🚚">
+                            <div class="sparkle-container"></div>
+                            <div class="goal-header">
+                                <span class="goal-label">🚚 Free Shipping</span>
+                                <span class="goal-progress-text">$50</span>
+                            </div>
+                            <div class="visualizer-track">
+                                <div class="visualizer-progress"></div>
+                                <div class="visualizer-plane">
+                                    <span class="plane-icon">🚚</span>
+                                </div>
+                            </div>
+                            <div class="visualizer-message"></div>
+                        </div>
+
+                        <!-- Goal 2: Free Gift -->
+                        <div class="visualizer-goal" data-threshold="100" data-icon="🎁">
+                            <div class="sparkle-container"></div>
+                            <div class="goal-header">
+                                <span class="goal-label">🎁 Free Gift</span>
+                                <span class="goal-progress-text">$100</span>
+                            </div>
+                            <div class="visualizer-track">
+                                <div class="visualizer-progress"></div>
+                                <div class="visualizer-plane">
+                                    <span class="plane-icon">🎁</span>
+                                </div>
+                            </div>
+                            <div class="visualizer-message"></div>
+                        </div>
+
+                        <!-- Goal 3: Discount -->
+                        <div class="visualizer-goal" data-threshold="150" data-icon="💰">
+                            <div class="sparkle-container"></div>
+                            <div class="goal-header">
+                                <span class="goal-label">💰 15% Off</span>
+                                <span class="goal-progress-text">$150</span>
+                            </div>
+                            <div class="visualizer-track">
+                                <div class="visualizer-progress"></div>
+                                <div class="visualizer-plane">
+                                    <span class="plane-icon">💰</span>
+                                </div>
+                            </div>
+                            <div class="visualizer-message"></div>
+                        </div>
+
+                        <!-- Goal 4: Gift Card -->
+                        <div class="visualizer-goal" data-threshold="200" data-icon="💳">
+                            <div class="sparkle-container"></div>
+                            <div class="goal-header">
+                                <span class="goal-label">💳 $25 Gift Card</span>
+                                <span class="goal-progress-text">$200</span>
+                            </div>
+                            <div class="visualizer-track">
+                                <div class="visualizer-progress"></div>
+                                <div class="visualizer-plane">
+                                    <span class="plane-icon">💳</span>
+                                </div>
+                            </div>
+                            <div class="visualizer-message"></div>
+                        </div>
+
+                        <!-- Goal 5: Mystery Reward -->
+                        <div class="visualizer-goal" data-threshold="250" data-icon="🎲">
+                            <div class="sparkle-container"></div>
+                            <div class="goal-header">
+                                <span class="goal-label">🎲 Mystery Reward</span>
+                                <span class="goal-progress-text">$250</span>
+                            </div>
+                            <div class="visualizer-track">
+                                <div class="visualizer-progress"></div>
+                                <div class="visualizer-plane">
+                                    <span class="plane-icon">🎲</span>
+                                </div>
+                            </div>
+                            <div class="visualizer-message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="ps-grid">
+                <div class="ps-problem">
+                    <div class="ps-label">The Problem</div>
+                    <h2>Most cart progress bars only show ONE goal. Customers hit free shipping and stop adding items.</h2>
+                </div>
+                <div class="ps-solution">
+                    <div class="ps-label">The Solution</div>
+                    <h2>Give them a JOURNEY with multiple milestones. Free shipping unlocked? Now chase the free gift. Then the discount. Each goal increases cart value.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need, Zero Configuration</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Auto-Detection</h3>
+                    <p>Reads your shipping zones automatically. No manual threshold setup. Install and go.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Up to 5 Goals</h3>
+                    <p>Free shipping, free gifts, discounts, gift cards, mystery rewards. Stack them however you want.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Beautiful Animations</h3>
+                    <p>Flying icons, celebration fireworks, pulsing urgency. Makes competitors look boring.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Product Picker</h3>
+                    <p>Browse your catalog to select free gifts. Auto-adds to cart when customers unlock the goal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Auto-Apply Discounts</h3>
+                    <p>Discount codes automatically applied and customers redirected to checkout. Zero friction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Full Customization</h3>
+                    <p>6 color presets, 13 emoji icons, custom descriptions. Match your brand perfectly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Responsive</h3>
+                    <p>Looks gorgeous on any device. Desktop, tablet, phone—same delightful experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Theme Agnostic</h3>
+                    <p>Works with ANY Shopify theme. Prestige, Dawn, Debut, custom themes—zero code changes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Price & Weight Goals</h3>
+                    <p>Track cart value OR weight. Perfect for stores with weight-based shipping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How the Multi-Goal Journey Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Customer Adds to Cart</h3>
+                    <p>Your visualizer appears showing all available goals. They see the full journey ahead.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>First Goal Unlocks</h3>
+                    <p>Progress bar fills, icon celebrates with fireworks, free shipping unlocked! But there's more...</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>They Chase the Next Reward</h3>
+                    <p>$50 more gets them a free gift. Now they're invested—adding items to reach the next milestone.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Rewards Auto-Apply</h3>
+                    <p>Free gifts added to cart automatically. Discount codes applied at checkout. Zero friction.</p>
+                </div>
+            </div>
+            <p class="how-it-works-note">
+                <strong>The psychology:</strong> Single-goal progress bars stop working once the goal is reached. Multi-goal journeys keep customers engaged all the way to checkout—and beyond.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid pricing-grid-three">
+                <div class="pricing-card pricing-beta">
+                    <div class="pricing-badge">Limited Time</div>
+                    <h3>Beta Access</h3>
+                    <div class="pricing-amount">
+                        <span class="price-large">Free</span>
+                    </div>
+                    <p class="pricing-value">Premium tier locked in forever<br><span class="strike">$99/month value</span></p>
+                    <ul class="pricing-features">
+                        <li>Everything in Premium</li>
+                        <li>Never pay, ever</li>
+                        <li>Help shape the product</li>
+                        <li>Early access to features</li>
+                    </ul>
+                    <a href="#beta-signup" class="cta-button cta-primary">Join Beta Waitlist</a>
+                </div>
+                <div class="pricing-card pricing-standard">
+                    <h3>Standard</h3>
+                    <div class="pricing-amount">
+                        <span class="price-large">$34.99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <p class="pricing-value">Everything you need</p>
+                    <ul class="pricing-features">
+                        <li>Up to 5 goals per cart</li>
+                        <li>Auto-detection (zero config)</li>
+                        <li>Product picker for gifts</li>
+                        <li>Auto-apply discounts</li>
+                        <li>6 color presets</li>
+                        <li>13 emoji icons</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#beta-signup" class="cta-button cta-secondary">Coming Soon</a>
+                </div>
+                <div class="pricing-card pricing-premium">
+                    <div class="pricing-badge pricing-badge-premium">Custom Branding</div>
+                    <h3>Premium</h3>
+                    <div class="pricing-amount">
+                        <span class="price-large">$99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <p class="pricing-value">Make it YOUR brand</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Standard</li>
+                        <li>Upload 1 custom icon (your logo!)</li>
+                        <li>Theme color integration (auto-pull colors)</li>
+                        <li>Border radius matching</li>
+                        <li>Priority support (24-hour SLA)</li>
+                        <li>Feature request consideration</li>
+                    </ul>
+                    <a href="#beta-signup" class="cta-button cta-secondary">Coming Soon</a>
+                </div>
+            </div>
+            <div class="pricing-roi">
+                <p><strong>Which tier is right for you?</strong></p>
+                <p><strong>Standard</strong> is perfect for most stores — everything you need to see immediate AOV increases.</p>
+                <p><strong>Premium</strong> is for stores that want custom branding with their logo, theme-matched colors, and priority support.</p>
+                <p class="roi-highlight">Both tiers pay for themselves with just 1-2 extra sales per month</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Turn Every Cart Into a Quest?</h2>
+            <p>Join our beta program and get Premium tier locked in forever ($1,188/year value). Install in 30 seconds, see results immediately.</p>
+            <a href="#beta-signup" class="cta-button cta-primary cta-large">Join Free Beta — Premium Forever</a>
+        </div>
+    </section>
+
+    <!-- Beta Signup Form (placeholder) -->
+    <section id="beta-signup" class="beta-signup">
+        <div class="container">
+            <h2>Join the Beta Program</h2>
+            <p>Limited spots available. Beta testers get <strong>Premium tier locked in forever</strong> (normally $99/month — that's $1,188/year).</p>
+            <div class="signup-form">
+                <p class="form-note">
+                    <strong>What you get as a beta tester:</strong><br>
+                    ✓ Premium tier forever (never pay)<br>
+                    ✓ Upload your brand logo as custom icon<br>
+                    ✓ Theme color integration (auto-match colors)<br>
+                    ✓ Border radius matching<br>
+                    ✓ Priority support (24-hour SLA)<br>
+                    ✓ Feature request consideration<br>
+                    ✓ Help shape the product
+                </p>
+                <p class="form-note" style="margin-top: 1.5rem;">
+                    Email <a href="mailto:sebastian@larsen.studio">sebastian@larsen.studio</a> to reserve your spot. Include your store name and URL.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Free Shipping Visualizer. Built by <a href="https://larsen.studio" target="_blank">larsen.studio</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Multi-goal looping animation (actual visualizer UI)
+        const cartValueEl = document.getElementById('cartValue');
+        const goals = document.querySelectorAll('.visualizer-goal');
+
+        let cartValue = 0;
+        let animationRunning = false;
+
+        // Create sparkle fireworks on goal unlock
+        function createSparkles(goal) {
+            const container = goal.querySelector('.sparkle-container');
+            const sparkleEmojis = ['✨', '⭐', '💫', '🌟', '✨'];
+
+            // Create 8 sparkles
+            for (let i = 0; i < 8; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.textContent = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+
+                // Random position across the goal card
+                sparkle.style.left = (20 + Math.random() * 60) + '%';
+                sparkle.style.top = '50%';
+
+                // Slight random delay for staggered effect
+                sparkle.style.animationDelay = (Math.random() * 0.2) + 's';
+
+                container.appendChild(sparkle);
+
+                // Remove after animation
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1500);
+            }
+        }
+
+        function resetAnimation() {
+            cartValue = 0;
+            cartValueEl.textContent = '$0.00';
+
+            goals.forEach(goal => {
+                const progress = goal.querySelector('.visualizer-progress');
+                const plane = goal.querySelector('.visualizer-plane');
+                const message = goal.querySelector('.visualizer-message');
+                const sparkleContainer = goal.querySelector('.sparkle-container');
+
+                progress.style.width = '0%';
+                plane.style.left = '0%';
+                plane.classList.remove('celebrate');
+                goal.classList.remove('completed', 'almost-there');
+                message.textContent = '';
+                sparkleContainer.innerHTML = ''; // Clear sparkles
+            });
+        }
+
+        function animateGoals() {
+            if (!animationRunning) return;
+
+            // Increment cart value
+            if (cartValue < 250) {
+                cartValue += 0.75; // Slightly faster
+                cartValueEl.textContent = '$' + cartValue.toFixed(2);
+
+                // Update each goal's progress
+                goals.forEach(goal => {
+                    const threshold = parseFloat(goal.dataset.threshold);
+                    const progress = goal.querySelector('.visualizer-progress');
+                    const plane = goal.querySelector('.visualizer-plane');
+                    const message = goal.querySelector('.visualizer-message');
+
+                    // Calculate progress for this goal
+                    const goalProgress = Math.min(100, (cartValue / threshold) * 100);
+                    progress.style.width = goalProgress + '%';
+                    plane.style.left = goalProgress + '%';
+
+                    // Update goal states
+                    if (cartValue >= threshold) {
+                        // Completed
+                        if (!goal.classList.contains('completed')) {
+                            goal.classList.remove('almost-there');
+                            goal.classList.add('completed');
+                            plane.classList.add('celebrate');
+                            message.textContent = 'Unlocked! 🎉';
+
+                            // FIREWORKS! 🎆
+                            createSparkles(goal);
+
+                            // Remove celebrate class after animation
+                            setTimeout(() => {
+                                plane.classList.remove('celebrate');
+                            }, 1000);
+                        }
+                    } else if (cartValue >= threshold * 0.8) {
+                        // Almost there (80%+)
+                        if (!goal.classList.contains('almost-there') && !goal.classList.contains('completed')) {
+                            goal.classList.add('almost-there');
+                            const remaining = (threshold - cartValue).toFixed(2);
+                            message.textContent = `$${remaining} away!`;
+                        }
+                    } else {
+                        // In progress
+                        const remaining = (threshold - cartValue).toFixed(2);
+                        message.textContent = `$${remaining} to go`;
+                    }
+                });
+
+                requestAnimationFrame(animateGoals);
+            } else {
+                // Pause at max, then reset and loop
+                setTimeout(() => {
+                    resetAnimation();
+                    setTimeout(() => {
+                        if (animationRunning) {
+                            animateGoals();
+                        }
+                    }, 500);
+                }, 2000); // Pause for 2 seconds at full completion
+            }
+        }
+
+        // Start animation when hero is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animationRunning) {
+                    animationRunning = true;
+                    setTimeout(() => {
+                        animateGoals();
+                    }, 500);
+                } else if (!entry.isIntersecting) {
+                    animationRunning = false;
+                }
+            });
+        });
+
+        const heroVisual = document.querySelector('.hero-visual');
+        if (heroVisual) {
+            observer.observe(heroVisual);
+        }
+    </script>
+</body>
+</html>
