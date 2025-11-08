@@ -57,27 +57,38 @@
 
 ---
 
-## Deployment Options
+## Deployment
 
-### Option 1: Deploy to larsen.studio (Recommended)
+### Automatic Deployment via Cloudflare Pages ✨
 
-**If larsen.studio is a static site:**
+**This repo is auto-deployed to Cloudflare Pages.**
+
+Just push to GitHub:
 
 ```bash
-# Copy files to your website directory
-cp -r /Users/sebastianlarsen/Developer/shopify-shipping-visualizer/landing-page \
-     /path/to/larsen.studio/apps/free-shipping-visualizer/
-
-# Ensure file structure:
-# /apps/free-shipping-visualizer/index.html
-# /apps/free-shipping-visualizer/styles.css
+git add .
+git commit -m "Update landing page"
+git push
 ```
 
-**If larsen.studio uses a hosting service:**
+**Cloudflare Pages automatically:**
+- Detects the push
+- Builds the site
+- Deploys to https://larsen.studio
+- Updates in ~30 seconds
 
-- **Netlify/Vercel**: Drag & drop the `landing-page` folder
-- **GitHub Pages**: Push to repo, configure path
-- **Cloudflare Pages**: Connect repo or direct upload
+**No manual deployment needed. Push to git → live on Cloudflare. <3**
+
+---
+
+### Local Development
+
+```bash
+# Python 3 local server
+python3 -m http.server 8000
+
+# Then visit: http://localhost:8000
+```
 
 ### Option 2: Quick Preview (Local Server)
 
