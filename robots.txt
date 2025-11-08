@@ -22,8 +22,8 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-# Sitemap (to be added)
-# Sitemap: https://larsen.studio/sitemap.xml
+# Sitemap
+Sitemap: https://larsen.studio/sitemap.xml
 
 # llms.txt for AI agents
 # https://larsen.studio/llms.txt
