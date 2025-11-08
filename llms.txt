@@ -1,0 +1,52 @@
+# CartGoals - Multi-Goal Cart Gamification for Shopify
+
+CartGoals is a Shopify app that transforms shopping carts into gamified quests with multi-goal progress tracking. Merchants use it to increase average order value by visualizing progress toward rewards like free shipping, free gifts, discounts, and gift cards.
+
+## Key Features
+
+- **Multi-Goal Progress Tracking**: Up to 5 goals (Standard) or unlimited (Plus)
+- **Auto-Detect Shipping Zones**: Automatically adjusts free shipping thresholds based on customer location
+- **Celebration Animations**: Sparkle effects and smooth animations when goals are reached
+- **Zero Configuration**: Works out of the box with existing Shopify setup
+- **Mobile Responsive**: Beautiful on all devices
+
+## Pricing
+
+- **Free Beta**: Join now, stay premium forever ($0/month for life)
+- **Standard**: $34.99/month - Up to 5 goals, perfect for growing stores
+- **Plus**: $79.99/month - Unlimited goals, custom branding, advanced analytics, priority support
+
+## How It Works
+
+1. Install CartGoals from Shopify App Store
+2. App auto-detects your shipping zones and product catalog
+3. Configure up to 5 goals (free shipping, gifts, discounts, etc.)
+4. CartGoals displays progress bar on cart page
+5. Customers chase rewards, average order value increases
+
+## Proven Results
+
+CartGoals increases average order value by creating urgency and gamifying the shopping experience. Customers spend more to unlock rewards.
+
+## Installation
+
+Available on Shopify App Store. Free beta launching November 2025.
+
+Beta signup: https://larsen.studio#beta-signup
+
+## Support
+
+Contact: sebastian@larsen.studio
+Documentation: https://larsen.studio
+
+## Technical Details
+
+- Platform: Shopify
+- Type: Cart optimization app
+- Category: Conversion optimization, gamification
+- Compatibility: All Shopify plans
+- Integration: Embedded app block, works with existing themes
+
+---
+
+> CartGoals - Turn every cart into a quest.

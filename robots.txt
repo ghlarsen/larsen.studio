@@ -1,0 +1,29 @@
+# robots.txt for larsen.studio (CartGoals landing page)
+
+User-agent: *
+Allow: /
+
+# AI Search Bots - Explicitly allow
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Sitemap (to be added)
+# Sitemap: https://larsen.studio/sitemap.xml
+
+# llms.txt for AI agents
+# https://larsen.studio/llms.txt
