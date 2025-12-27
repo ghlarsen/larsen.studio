@@ -824,6 +824,13 @@ a:hover {
     font-size: 1rem;
 }
 
+.pricing-includes {
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-xs);
+}
+
 .pricing-features {
     list-style: none;
     margin-bottom: var(--space-lg);
