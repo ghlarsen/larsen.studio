@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Shipping Visualizer - Multi-Goal Cart Gamification for Shopify</title>
-<meta name="description" content="Turn every cart into a quest. Beautiful multi-goal progress tracking with free shipping, gifts, discounts & more. Auto-detects shipping zones. Zero config needed. Proven to increase AOV.">
+<meta name="description" content="Turn every cart into a quest. Beautiful multi-goal progress tracking with free shipping, gifts, discounts & more. Auto-detects shipping zones. Zero config needed. Designed to increase AOV.">
 <meta name="keywords" content="shopify app, cart goals, free shipping visualizer, gamified checkout, progress bar, cart upsell, shopify multi-goal, cart rewards, shopify gamification">
 
 <!-- Open Graph / Social Media -->
@@ -61,12 +61,7 @@
 "description": "Everything in Standard plus: Smart product suggestions to boost sales, 4-stage progressive FOMO messaging, dynamic variables (amount, progress), 10 seasonal celebration themes (Diwali, Hanukkah, Eid, Lunar New Year), premium onboarding call (45 min), priority support, unlimited goals."
 }
 ],
-"description": "Turn browsers into buyers. CartGoals shows Shopify customers exactly how close they are to free shipping, discounts, and rewards with beautiful visual progress bars. Stop losing revenue to cart abandonment—your customers want to spend more, show them how. Auto-detects shipping thresholds, zero coding required.",
-"aggregateRating": {
-"@type": "AggregateRating",
-"ratingValue": "5.0",
-"reviewCount": "1"
-}
+"description": "Turn browsers into buyers. CartGoals shows Shopify customers exactly how close they are to free shipping, discounts, and rewards with beautiful visual progress bars. Stop losing revenue to cart abandonment—your customers want to spend more, show them how. Auto-detects shipping thresholds, zero coding required."
 }
 </script>
 
@@ -78,34 +73,42 @@
 "mainEntity": [
 {
 "@type": "Question",
-"name": "What is CartGoals?",
+"name": "Does CartGoals slow down my store?",
 "acceptedAnswer": {
 "@type": "Answer",
-"text": "CartGoals is a multi-goal cart gamification app for Shopify that visualizes progress toward rewards like free shipping, free gifts, discounts, and gift cards. It increases average order value by making shopping feel like a quest."
+"text": "No. CartGoals uses a lightweight script that loads asynchronously and has minimal impact on page speed. The entire app is optimized for performance and won't affect your store's loading time."
 }
 },
 {
 "@type": "Question",
-"name": "How much does CartGoals cost?",
+"name": "Does it work with my theme?",
 "acceptedAnswer": {
 "@type": "Answer",
-"text": "CartGoals has 3 tiers: FREE ($0/month) for single goal tracking, STANDARD ($39.99/month) for up to 5 goals with discount integration and advanced animations, and PREMIUM ($69.99/month) for unlimited goals with custom messaging, product suggestions, and priority support."
+"text": "Yes. CartGoals works with all Shopify 2.0 themes and most custom themes. It integrates seamlessly with Dawn, Debut, Brooklyn, Sense, Craft, Prestige, Impulse, and virtually any other Shopify theme without requiring code changes."
 }
 },
 {
 "@type": "Question",
-"name": "Which plan should I choose?",
+"name": "How long does setup take?",
 "acceptedAnswer": {
 "@type": "Answer",
-"text": "Start with FREE to test the concept risk-free. Upgrade to STANDARD when you want discount goal integration and multiple goals (most growing stores). Choose PREMIUM if you need custom FOMO messaging, product suggestions, or unlimited goals for complex incentive structures."
+"text": "About 2 minutes. Simply install the app from the Shopify App Store, and CartGoals will automatically detect your shipping settings. No coding or technical knowledge required. You can customize the appearance and goals from an intuitive dashboard."
 }
 },
 {
 "@type": "Question",
-"name": "Does it work with my shipping setup?",
+"name": "What if I need help?",
 "acceptedAnswer": {
 "@type": "Answer",
-"text": "Yes. CartGoals auto-detects your shipping zones and adjusts free shipping thresholds based on customer location. Zero configuration needed."
+"text": "Email support is included with all plans. Free plan users get standard email support, Standard plan users get 24-48 hour response times, and Premium plan users get same-day priority support."
+}
+},
+{
+"@type": "Question",
+"name": "Can I customize the look?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Absolutely. CartGoals offers complete customization including 6 color presets, 13 emoji icons, custom goal descriptions, animation styles, and placement options. Match it perfectly to your brand's aesthetic without any coding."
 }
 }
 ]
@@ -132,7 +135,27 @@ plausible.init()
 <strong>CartGoals turns browsers into buyers with visual progress bars that show customers how close they are to free shipping, discounts, and rewards.</strong> Your customers already want free shipping—show them exactly how to get it. Auto-detects your shipping thresholds, works with any Shopify theme, zero coding required.
 </p>
 <p class="hero-subtitle">Stop losing revenue to cart abandonment. Show shoppers their progress, create urgency with discount goals, and celebrate when they hit milestones. Higher cart values, lower abandonment, happier customers.</p>
-<a href="mailto:cartgoals@larsen.studio?subject=CartGoals Beta Signup&body=Hi! I'd like to join the CartGoals free beta.%0D%0A%0D%0AMy Shopify store: [your-store.myshopify.com]%0D%0AMonthly revenue: [approximate]%0D%0A%0D%0AThanks!" class="cta-button cta-primary">Join Free Beta — Premium Forever</a>
+<div class="setup-time">
+<div class="setup-icon">⏱️</div>
+<div class="setup-text">
+<strong>Setup takes 2 minutes</strong>
+<span>No coding required. Install and go.</span>
+</div>
+</div>
+<form id="hero-signup-form" class="signup-form" data-form="hero">
+  <div class="form-row">
+    <input type="email" name="email" placeholder="you@example.com" required class="form-input">
+    <input type="text" name="store" placeholder="your-store.myshopify.com" required class="form-input">
+  </div>
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit" class="cta-button cta-primary form-submit">
+    <span class="submit-text">Join Beta Waitlist</span>
+    <span class="submit-loading" style="display:none">Joining...</span>
+  </button>
+  <p class="form-note">Beta limited to first 100 stores</p>
+  <p class="form-success" style="display:none">You're on the list! We'll be in touch soon.</p>
+  <p class="form-error" style="display:none"></p>
+</form>
 </div>
 <div class="hero-visual">
 <div class="visualizer-preview-wrapper">
@@ -296,6 +319,49 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 </div>
 </section>
 
+<!-- Theme Compatibility Section -->
+<section class="theme-compatibility">
+<div class="container">
+<h2 class="section-title">Works with All Major Shopify Themes</h2>
+<p class="section-subtitle">No matter which theme you use, CartGoals integrates seamlessly without any code changes</p>
+<div class="theme-logos">
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Dawn</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Debut</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Brooklyn</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Sense</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Craft</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Prestige</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Impulse</span>
+</div>
+<div class="theme-logo">
+<div class="theme-icon">🎨</div>
+<span>Custom</span>
+</div>
+</div>
+<p class="theme-note">Compatible with all Shopify 2.0 themes and most custom themes. Zero code changes required.</p>
+</div>
+</section>
+
 <!-- How It Works Section -->
 <section class="how-it-works">
 <div class="container">
@@ -334,7 +400,6 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 <h2 class="section-title">Simple, Transparent Pricing</h2>
 <div class="pricing-grid pricing-grid-three">
 <div class="pricing-card pricing-beta">
-<div class="pricing-badge">Free Tier</div>
 <h3>Free</h3>
 <div class="pricing-amount">
 <span class="price-large">$0</span>
@@ -347,10 +412,9 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 <li>14 emoji icons</li>
 <li>Email support</li>
 </ul>
-<a href="mailto:cartgoals@larsen.studio?subject=CartGoals Beta Signup&body=Hi! I'd like to join the CartGoals free beta.%0D%0A%0D%0AMy Shopify store: [your-store.myshopify.com]%0D%0AMonthly revenue: [approximate]%0D%0A%0D%0AThanks!" class="cta-button cta-secondary">Join Beta Waitlist</a>
+<a href="#hero-signup-form" class="cta-button cta-secondary scroll-to-form">Join Beta Waitlist</a>
 </div>
 <div class="pricing-card pricing-standard">
-<div class="pricing-badge">Popular</div>
 <h3>Standard</h3>
 <div class="pricing-amount">
 <span class="price-large">$34.99</span>
@@ -364,10 +428,9 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 <li>Goal combining (price + weight)</li>
 <li>24-48 hour support</li>
 </ul>
-<a href="mailto:cartgoals@larsen.studio?subject=CartGoals Beta Signup&body=Hi! I'd like to join the CartGoals free beta.%0D%0A%0D%0AMy Shopify store: [your-store.myshopify.com]%0D%0AMonthly revenue: [approximate]%0D%0A%0D%0AThanks!" class="cta-button cta-primary">Join Beta Waitlist</a>
+<a href="#hero-signup-form" class="cta-button cta-primary scroll-to-form">Join Beta Waitlist</a>
 </div>
 <div class="pricing-card pricing-premium">
-<div class="pricing-badge pricing-badge-premium">Best Value</div>
 <h3>Premium</h3>
 <div class="pricing-amount">
 <span class="price-large">$69.99</span>
@@ -381,7 +444,7 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 <li>Multi-stage FOMO messages</li>
 <li>Same-day support</li>
 </ul>
-<a href="mailto:cartgoals@larsen.studio?subject=CartGoals Beta Signup&body=Hi! I'd like to join the CartGoals free beta.%0D%0A%0D%0AMy Shopify store: [your-store.myshopify.com]%0D%0AMonthly revenue: [approximate]%0D%0A%0D%0AThanks!" class="cta-button cta-secondary">Join Beta Waitlist</a>
+<a href="#hero-signup-form" class="cta-button cta-secondary scroll-to-form">Join Beta Waitlist</a>
 </div>
 </div>
 <div class="pricing-roi">
@@ -398,8 +461,50 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 <section class="final-cta">
 <div class="container">
 <h2>Ready to Turn Every Cart Into a Quest?</h2>
-<p>Join the free beta now and keep premium features forever. Beta testers get lifetime access to the Plus plan at $0/month.</p>
-<a href="mailto:cartgoals@larsen.studio?subject=CartGoals Beta Signup&body=Hi! I'd like to join the CartGoals free beta.%0D%0A%0D%0AMy Shopify store: [your-store.myshopify.com]%0D%0AMonthly revenue: [approximate]%0D%0A%0D%0AThanks!" class="cta-button cta-primary cta-large">Join Beta Waitlist</a>
+<p>Beta launching soon. Join the waitlist to be among the first to get access and special launch pricing.</p>
+<form id="final-signup-form" class="signup-form signup-form-centered" data-form="final">
+  <div class="form-row form-row-centered">
+    <input type="email" name="email" placeholder="you@example.com" required class="form-input">
+    <input type="text" name="store" placeholder="your-store.myshopify.com" required class="form-input">
+  </div>
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit" class="cta-button cta-primary cta-large form-submit">
+    <span class="submit-text">Join Beta Waitlist</span>
+    <span class="submit-loading" style="display:none">Joining...</span>
+  </button>
+  <p class="form-note">Beta limited to first 100 stores</p>
+  <p class="form-success" style="display:none">You're on the list! We'll be in touch soon.</p>
+  <p class="form-error" style="display:none"></p>
+</form>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+<div class="container">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-grid">
+<div class="faq-item">
+<h3 class="faq-question">Does CartGoals slow down my store?</h3>
+<p class="faq-answer">No. CartGoals uses a lightweight script that loads asynchronously and has minimal impact on page speed. The entire app is optimized for performance and won't affect your store's loading time.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Does it work with my theme?</h3>
+<p class="faq-answer">Yes. CartGoals works with all Shopify 2.0 themes and most custom themes. It integrates seamlessly with Dawn, Debut, Brooklyn, Sense, Craft, Prestige, Impulse, and virtually any other Shopify theme without requiring code changes.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">How long does setup take?</h3>
+<p class="faq-answer">About 2 minutes. Simply install the app from the Shopify App Store, and CartGoals will automatically detect your shipping settings. No coding or technical knowledge required. You can customize the appearance and goals from an intuitive dashboard.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">What if I need help?</h3>
+<p class="faq-answer">Email support is included with all plans. Free plan users get standard email support, Standard plan users get 24-48 hour response times, and Premium plan users get same-day priority support. We're here to help you succeed.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Can I customize the look?</h3>
+<p class="faq-answer">Absolutely. CartGoals offers complete customization including 6 color presets, 13 emoji icons, custom goal descriptions, animation styles, and placement options. Match it perfectly to your brand's aesthetic without any coding.</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -561,6 +666,80 @@ const heroVisual = document.querySelector('.hero-visual');
 if (heroVisual) {
 observer.observe(heroVisual);
 }
+
+// Form submission handler
+document.querySelectorAll('.signup-form').forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('.form-submit');
+    const submitText = form.querySelector('.submit-text');
+    const submitLoading = form.querySelector('.submit-loading');
+    const successMsg = form.querySelector('.form-success');
+    const errorMsg = form.querySelector('.form-error');
+
+    // Get form data
+    const formData = new FormData(form);
+    const data = {
+      email: formData.get('email'),
+      store: formData.get('store'),
+      website: formData.get('website') // honeypot
+    };
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitText.style.display = 'none';
+    submitLoading.style.display = 'inline';
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        // Success
+        successMsg.style.display = 'block';
+        form.reset();
+
+        // Track conversion
+        if (window.plausible) {
+          plausible('Beta Signup', { props: { form: form.dataset.form } });
+        }
+      } else {
+        // Error from server
+        errorMsg.textContent = result.error || 'Something went wrong. Please try again.';
+        errorMsg.style.display = 'block';
+      }
+    } catch (err) {
+      // Network error
+      errorMsg.textContent = 'Connection error. Please try again.';
+      errorMsg.style.display = 'block';
+    } finally {
+      // Reset button
+      submitBtn.disabled = false;
+      submitText.style.display = 'inline';
+      submitLoading.style.display = 'none';
+    }
+  });
+});
+
+// Smooth scroll for pricing buttons
+document.querySelectorAll('.scroll-to-form').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const form = document.getElementById('hero-signup-form');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      form.querySelector('input[type="email"]').focus();
+    }
+  });
+});
 </script>
 </body>
 </html>

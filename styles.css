@@ -196,7 +196,41 @@ a:hover {
 .hero-subtitle {
     font-size: 1.5rem;
     color: var(--color-text-medium);
+    margin-bottom: var(--space-lg);
+}
+
+.setup-time {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
     margin-bottom: var(--space-xl);
+    max-width: fit-content;
+}
+
+.setup-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.setup-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.setup-text strong {
+    font-size: 1.125rem;
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-bold);
+}
+
+.setup-text span {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
 }
 
 .hero-visual {
@@ -600,6 +634,56 @@ a:hover {
 }
 
 /* ===================================
+   Theme Compatibility Section
+   =================================== */
+
+.theme-compatibility {
+    background: white;
+}
+
+.theme-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    max-width: 900px;
+    margin: 0 auto var(--space-xl);
+}
+
+.theme-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    background: var(--color-bg-light);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.theme-logo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-icon {
+    font-size: 2.5rem;
+}
+
+.theme-logo span {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.theme-note {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===================================
    How It Works Section
    =================================== */
 
@@ -874,6 +958,159 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Signup Form Styles */
+.signup-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.signup-form-centered {
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.form-row-centered {
+    justify-content: center;
+}
+
+.form-input {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    background: white;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.form-input::placeholder {
+    color: var(--color-text-light);
+}
+
+.form-submit {
+    width: 100%;
+    margin-bottom: var(--space-sm);
+}
+
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-note {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin: var(--space-sm) 0;
+}
+
+.form-success {
+    color: #2f855a;
+    background: #c6f6d5;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius-sm);
+    font-weight: var(--font-weight-medium);
+    margin-top: var(--space-sm);
+}
+
+.form-error {
+    color: #c53030;
+    background: #fed7d7;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius-sm);
+    font-weight: var(--font-weight-medium);
+    margin-top: var(--space-sm);
+}
+
+/* Final CTA form adjustments */
+.final-cta .form-input {
+    background: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.final-cta .form-input:focus {
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.final-cta .form-note {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.final-cta .form-success {
+    background: rgba(255, 255, 255, 0.95);
+    color: #2f855a;
+}
+
+.final-cta .form-error {
+    background: rgba(255, 255, 255, 0.95);
+    color: #c53030;
+}
+
+/* Mobile form adjustments */
+@media (max-width: 640px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-input {
+        width: 100%;
+    }
+}
+
+/* ===================================
+   FAQ Section
+   =================================== */
+
+.faq {
+    background: var(--color-bg-light);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    font-size: 1.25rem;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.faq-answer {
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
 /* ===================================
    Footer
    =================================== */
@@ -957,6 +1194,11 @@ a:hover {
     /* Beta Testers */
     .beta-testers {
         grid-template-columns: 1fr;
+    }
+
+    /* Theme Logos */
+    .theme-logos {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* Pricing */
