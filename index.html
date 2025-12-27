@@ -142,16 +142,16 @@ plausible.init()
 <span>No coding required. Install and go.</span>
 </div>
 </div>
-<form id="hero-signup-form" class="signup-form signup-form-inline" data-form="hero">
-  <div class="form-row">
+<form id="hero-signup-form" class="signup-form-hero" data-form="hero">
+  <div class="form-inputs">
     <input type="email" name="email" placeholder="you@example.com" required class="form-input">
     <input type="text" name="store" placeholder="your-store.myshopify.com" required class="form-input">
-    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-    <button type="submit" class="cta-button cta-primary form-submit">
-      <span class="submit-text">Join Beta</span>
-      <span class="submit-loading" style="display:none">...</span>
-    </button>
   </div>
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit" class="cta-button cta-primary">
+    <span class="submit-text">Join Beta Waitlist</span>
+    <span class="submit-loading" style="display:none">Joining...</span>
+  </button>
   <p class="form-note">Beta limited to first 100 stores</p>
   <p class="form-success" style="display:none">You're on the list! We'll be in touch soon.</p>
   <p class="form-error" style="display:none"></p>
