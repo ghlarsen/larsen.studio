@@ -641,38 +641,30 @@ a:hover {
     background: white;
 }
 
-.theme-logos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-    max-width: 900px;
-    margin: 0 auto var(--space-xl);
-}
-
-.theme-logo {
+.theme-badges {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-sm);
-    padding: var(--space-lg);
+    max-width: 700px;
+    margin: 0 auto var(--space-lg);
+}
+
+.theme-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
     background: var(--color-bg-light);
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
-}
-
-.theme-logo:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.theme-icon {
-    font-size: 2.5rem;
-}
-
-.theme-logo span {
-    font-size: 1rem;
-    font-weight: var(--font-weight-semibold);
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-medium);
     color: var(--color-text-dark);
+}
+
+.theme-badge-custom {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
 }
 
 .theme-note {
@@ -1221,10 +1213,7 @@ a:hover {
         grid-template-columns: 1fr;
     }
 
-    /* Theme Logos */
-    .theme-logos {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Theme Badges - no changes needed, they wrap naturally */
 
     /* Pricing */
     .pricing-grid,
