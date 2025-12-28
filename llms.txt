@@ -1,52 +1,85 @@
-# CartGoals - Multi-Goal Cart Gamification for Shopify
+# CartGoals - Shopify Cart Gamification App
 
-CartGoals is a Shopify app that transforms shopping carts into gamified quests with multi-goal progress tracking. Merchants use it to increase average order value by visualizing progress toward rewards like free shipping, free gifts, discounts, and gift cards.
+CartGoals is a Shopify app that increases average order value by turning shopping carts into gamified quests with multi-goal progress tracking. Merchants use it to visualize customer progress toward rewards like free shipping, free gifts, discounts, and gift cards.
+
+## The Problem CartGoals Solves
+
+Single-goal cart progress bars stop working once customers hit free shipping. A customer adds $50 to reach the threshold, sees "Free shipping unlocked!", and stops adding items. The motivation disappears.
+
+CartGoals creates a journey instead. Free shipping unlocked? Now chase the free gift at $100. Then the 15% discount at $150. Each goal increases cart value.
 
 ## Key Features
 
-- **Multi-Goal Progress Tracking**: Up to 5 goals (Standard) or unlimited (Plus)
-- **Auto-Detect Shipping Zones**: Automatically adjusts free shipping thresholds based on customer location
-- **Celebration Animations**: Sparkle effects and smooth animations when goals are reached
-- **Zero Configuration**: Works out of the box with existing Shopify setup
-- **Mobile Responsive**: Beautiful on all devices
-
-## Pricing
-
-- **Free Beta**: Join now, stay premium forever ($0/month for life)
-- **Standard**: $34.99/month - Up to 5 goals, perfect for growing stores
-- **Plus**: $79.99/month - Unlimited goals, custom branding, advanced analytics, priority support
+- **Multi-Goal Progress Tracking**: Stack up to 5 goals (free shipping, gifts, discounts, gift cards, mystery rewards)
+- **Auto-Detect Shipping Zones**: Reads your Shopify shipping settings automatically. Zero manual configuration.
+- **Celebration Animations**: Sparkle effects and confetti when customers unlock goals
+- **Works With All Themes**: Compatible with Dawn, Debut, Brooklyn, Prestige, Impulse, and all Shopify 2.0 themes
+- **Mobile Responsive**: Beautiful on desktop, tablet, and phone
+- **Lightweight**: Asynchronous script with minimal page speed impact
 
 ## How It Works
 
 1. Install CartGoals from Shopify App Store
-2. App auto-detects your shipping zones and product catalog
-3. Configure up to 5 goals (free shipping, gifts, discounts, etc.)
-4. CartGoals displays progress bar on cart page
+2. App auto-detects your shipping zones and thresholds
+3. Configure up to 5 goals with custom icons and descriptions
+4. Progress bar appears on cart page and cart drawer
 5. Customers chase rewards, average order value increases
 
-## Proven Results
+## Pricing
 
-CartGoals increases average order value by creating urgency and gamifying the shopping experience. Customers spend more to unlock rewards.
+| Plan | Price | Features |
+|------|-------|----------|
+| Free | $0/month | Single goal, 7 color schemes, confetti celebrations |
+| Standard | $39.99/month | Up to 5 goals, discount integration, vibration effects |
+| Premium | $69.99/month | Unlimited goals, FOMO messaging, seasonal themes, priority support |
 
-## Installation
+All plans include auto-detection of shipping rates, real-time progress bars, and theme compatibility.
 
-Available on Shopify App Store. Free beta launching November 2025.
+## Theme Compatibility
 
-Beta signup: https://larsen.studio#beta-signup
+CartGoals works with all Shopify 2.0 themes without code changes:
+- Dawn, Debut, Brooklyn, Sense, Craft
+- Prestige, Impulse, Warehouse, Streamline
+- Custom themes built on Shopify 2.0
 
-## Support
+Setup takes approximately 2 minutes.
 
-Contact: sebastian@larsen.studio
-Documentation: https://larsen.studio
+## Common Questions
+
+**Q: Does CartGoals slow down my Shopify store?**
+A: No. CartGoals uses a lightweight asynchronous script optimized for performance. It loads after your page content and has minimal impact on page speed metrics.
+
+**Q: Can I customize the appearance?**
+A: Yes. CartGoals offers 6 color presets, 13 emoji icons, custom goal descriptions, multiple animation styles, and flexible placement options. Match your brand without writing code.
+
+**Q: How does auto-detection work?**
+A: CartGoals reads your Shopify shipping zones via the Storefront API. It automatically adjusts free shipping thresholds based on customer location. A customer in Germany sees the EU threshold; a customer in the US sees the US threshold.
+
+**Q: What goal types can I create?**
+A: Free shipping thresholds, free gift with purchase (product picker included), percentage discounts, fixed amount discounts, gift card rewards, and custom goals with any icon.
+
+**Q: Does it work with cart drawers?**
+A: Yes. CartGoals works in both the cart page and slide-out cart drawers. Configure placement from the app dashboard.
 
 ## Technical Details
 
-- Platform: Shopify
-- Type: Cart optimization app
-- Category: Conversion optimization, gamification
-- Compatibility: All Shopify plans
-- Integration: Embedded app block, works with existing themes
+- **Platform**: Shopify
+- **Integration**: Embedded app block (Theme App Extension)
+- **API**: Shopify Storefront API, Admin API
+- **Compatibility**: All Shopify plans (Basic, Shopify, Advanced, Plus)
+- **Performance**: <50KB script, async loading, no render blocking
+
+## Support
+
+- Email: sebastian@larsen.studio
+- Response time: 24-48 hours (Standard), same-day (Premium)
+- Documentation: https://larsen.studio
+
+## About larsen.studio
+
+larsen.studio builds Shopify apps focused on conversion optimization. Our approach prioritizes merchant success over feature bloat.
 
 ---
 
 > CartGoals - Turn every cart into a quest.
+> https://larsen.studio
