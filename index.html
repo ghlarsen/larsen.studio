@@ -170,14 +170,13 @@ plausible.init()
 <form id="hero-signup-form" class="signup-form-hero" data-form="hero">
   <div class="form-inputs">
     <input type="email" name="email" placeholder="you@example.com" required class="form-input">
-    <input type="text" name="store" placeholder="your-store.myshopify.com" required class="form-input">
   </div>
   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
   <button type="submit" class="cta-button cta-primary">
-    <span class="submit-text">Join Beta Waitlist</span>
+    <span class="submit-text">Get Free Beta Access</span>
     <span class="submit-loading" style="display:none">Joining...</span>
   </button>
-  <p class="form-note">Beta limited to first 25 stores</p>
+  <p class="form-note"><strong>Free forever for beta testers</strong> — only 25 spots. Worth $69.99/mo after launch.</p>
   <p class="form-success" style="display:none">You're on the list! We'll be in touch soon.</p>
   <p class="form-error" style="display:none"></p>
 </form>
@@ -472,18 +471,17 @@ Cart Total: <strong id="cartValue">$0.00</strong>
 <section class="final-cta">
 <div class="container">
 <h2>Ready to Turn Every Cart Into a Quest?</h2>
-<p>Beta launching soon. Join the waitlist to be among the first to get access and special launch pricing.</p>
+<p>Beta testers get free lifetime access to the full Premium plan — worth $69.99/mo.</p>
 <form id="final-signup-form" class="signup-form signup-form-centered" data-form="final">
   <div class="form-row form-row-centered">
     <input type="email" name="email" placeholder="you@example.com" required class="form-input">
-    <input type="text" name="store" placeholder="your-store.myshopify.com" required class="form-input">
   </div>
   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
   <button type="submit" class="cta-button cta-primary cta-large form-submit">
-    <span class="submit-text">Join Beta Waitlist</span>
+    <span class="submit-text">Get Free Beta Access</span>
     <span class="submit-loading" style="display:none">Joining...</span>
   </button>
-  <p class="form-note">Beta limited to first 25 stores</p>
+  <p class="form-note"><strong>Free forever for beta testers</strong> — only 25 spots. Worth $69.99/mo after launch.</p>
   <p class="form-success" style="display:none">You're on the list! We'll be in touch soon.</p>
   <p class="form-error" style="display:none"></p>
 </form>
@@ -777,7 +775,6 @@ document.querySelectorAll('.signup-form').forEach(form => {
     const formData = new FormData(form);
     const data = {
       email: formData.get('email'),
-      store: formData.get('store'),
       website: formData.get('website') // honeypot
     };
 
