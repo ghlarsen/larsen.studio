@@ -17,17 +17,15 @@ export async function onRequestPost({ request, env }) {
   try {
     // Parse form data or JSON
     const contentType = request.headers.get('content-type') || '';
-    let email, store, honeypot;
+    let email, honeypot;
 
     if (contentType.includes('application/json')) {
       const json = await request.json();
       email = json.email;
-      store = json.store;
       honeypot = json.website; // honeypot field
     } else if (contentType.includes('form')) {
       const formData = await request.formData();
       email = formData.get('email');
-      store = formData.get('store');
       honeypot = formData.get('website'); // honeypot field
     } else {
       return new Response(JSON.stringify({ error: 'Invalid content type' }), {
@@ -48,19 +46,8 @@ export async function onRequestPost({ request, env }) {
       });
     }
 
-    // Validate store (optional but should look like a domain)
-    if (!store || store.length < 3) {
-      return new Response(JSON.stringify({ error: 'Store URL required' }), {
-        status: 400, headers
-      });
-    }
-
     // Clean inputs
     email = email.trim().toLowerCase().slice(0, 254);
-    store = store.trim().toLowerCase().slice(0, 253);
-
-    // Remove protocol if present
-    store = store.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
     // Get Slack webhook URL from environment
     const slackWebhook = env.SLACK_WEBHOOK_URL;
@@ -91,7 +78,7 @@ export async function onRequestPost({ request, env }) {
             },
             {
               type: 'mrkdwn',
-              text: `*Store:*\n${store}`
+              text: `*Source:*\nlarsen.studio`
             }
           ]
         },
