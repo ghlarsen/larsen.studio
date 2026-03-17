@@ -3,58 +3,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>larsen.studio — Sebastian Larsen</title>
-<meta name="description" content="Sebastian Larsen — AI Linguistic Consultant and app developer. Enterprise LLM projects, iOS and Shopify apps.">
+<title>Sebastian Larsen — larsen.studio</title>
+<meta name="description" content="Sebastian Larsen. Building at the frontier of digital since 1999. Apps, AI workflows, and real products.">
 <link rel="canonical" href="https://larsen.studio/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="larsen.studio — Sebastian Larsen">
-<meta property="og:description" content="AI Linguistic Consultant and app developer. Enterprise LLM projects, iOS and Shopify apps.">
+<meta property="og:title" content="Sebastian Larsen — larsen.studio">
+<meta property="og:description" content="Building at the frontier of digital since 1999.">
 <meta property="og:url" content="https://larsen.studio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --stone-900: #1c1917;
+  --stone-600: #57534e;
+  --stone-400: #a8a29e;
+  --stone-200: #e7e5e4;
+  --stone-50:  #fafaf9;
+}
+
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: #fff;
-  color: #111;
+  color: var(--stone-900);
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
+
+.geo-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-400);
+}
+
+header {
+  padding: 2.5rem 3rem;
+  border-bottom: 1px solid var(--stone-200);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.site-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+}
+
+.available-badge {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5c7a5c;
+  border: 1px solid #c4d4c4;
+  padding: 0.25rem 0.75rem;
+}
+
 main {
-  max-width: 480px;
-  padding: 2rem;
-  text-align: center;
+  flex: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem 2rem 6rem;
+  width: 100%;
 }
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 2rem;
+
+.hero {
+  margin-bottom: 5rem;
 }
-h1 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.6;
+
+.hero-label {
   margin-bottom: 1.5rem;
 }
-a {
-  color: #111;
+
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+
+.hero-body {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--stone-600);
+  max-width: 520px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--stone-200);
+  margin: 3.5rem 0;
+}
+
+.section-label {
+  margin-bottom: 2rem;
+}
+
+.work-item {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--stone-200);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-start: top;
+}
+
+.work-item:last-child {
+  border-bottom: 1px solid var(--stone-200);
+}
+
+.work-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.work-title a {
+  color: var(--stone-900);
+  text-decoration: none;
+}
+
+.work-title a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-a:hover {
-  color: #555;
+
+.work-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--stone-600);
+}
+
+.work-year {
+  font-size: 0.75rem;
+  color: var(--stone-400);
+  white-space: nowrap;
+  padding-top: 0.25rem;
+}
+
+.contact-section {
+  margin-top: 4rem;
+}
+
+.contact-section p {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--stone-600);
+  margin-bottom: 1.25rem;
+}
+
+.contact-link {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-900);
+  text-decoration: none;
+  border-bottom: 1px solid var(--stone-900);
+  padding-bottom: 2px;
+}
+
+.contact-link:hover {
+  color: var(--stone-600);
+  border-color: var(--stone-600);
+}
+
+footer {
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--stone-200);
+}
+
+footer p {
+  font-size: 0.75rem;
+  color: var(--stone-400);
+}
+
+/* Contact form */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.field-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone-400);
+}
+
+#contact-form input,
+#contact-form textarea {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: var(--stone-900);
+  background: #fff;
+  border: 1px solid var(--stone-200);
+  padding: 0.75rem 1rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+  color: var(--stone-400);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: var(--stone-600);
+}
+
+#contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#contact-submit {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--stone-900);
+  border: none;
+  padding: 0.875rem 2rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#contact-submit:hover { background: var(--stone-600); }
+#contact-submit:disabled { background: var(--stone-400); cursor: default; }
+
+#contact-feedback {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--stone-600);
+  min-height: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  header { padding: 1.5rem; }
+  main { padding: 3rem 1.5rem 4rem; }
+  footer { padding: 1.5rem; }
+  .work-item { grid-template-columns: 1fr; }
+  .work-year { padding-top: 0; }
+  .form-row { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
+
+<header>
+  <span class="site-name">LARSEN.STUDIO</span>
+  <span class="available-badge">Available for projects</span>
+</header>
+
 <main>
-  <img src="avatar.png" alt="Sebastian Larsen" class="avatar">
-  <h1>Hi, I'm Sebastian.<br>I build apps and consult on AI.</h1>
-  <p>AI Linguistic Consultant for enterprise LLM projects at leading US technology companies. Specialising in medical transcription, clinical NLP, and training data evaluation.</p>
-  <p style="margin-top: 1rem;">My Shopify app <a href="https://cartgoals.com">CartGoals</a> is live on the <a href="https://apps.shopify.com/cartgoals">Shopify App Store</a>.</p>
-  <p style="margin-top: 1rem;"><a href="https://hiko.fitness">Hiko</a> is a rucking and interval walking app for iOS, currently in beta.</p>
+
+  <div class="hero">
+    <p class="geo-label hero-label">Copenhagen, Denmark</p>
+    <h1>Building at the<br>frontier of digital<br>since 1999.</h1>
+    <p class="hero-body">
+      25 years of making real things — from the first online pizza ordering site in Denmark to direct commissions for Pet Shop Boys and major international brands. Now building production software and Shopify apps using AI-assisted development. Creative director by instinct, builder by necessity.
+    </p>
+  </div>
+
+  <div class="section-label">
+    <p class="geo-label">Current work</p>
+  </div>
+
+  <div class="work-item">
+    <div>
+      <p class="work-title"><a href="https://apps.shopify.com/cartgoals">CartGoals</a></p>
+      <p class="work-desc">Shopify app. Gamified cart goals that show customers how close they are to a reward — free shipping, discount, gift. Live on the Shopify App Store.</p>
+    </div>
+    <span class="work-year">2025–</span>
+  </div>
+
+  <div class="work-item">
+    <div>
+      <p class="work-title">Torii</p>
+      <p class="work-desc">Property platform for Japanese akiya — vacant houses available for purchase across Fukuoka Prefecture. Scrapes 8 municipal sources daily, translates listings, scores properties. Built solo with AI-assisted development.</p>
+    </div>
+    <span class="work-year">2025–</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">
+    <p class="geo-label">Selected past work</p>
+  </div>
+
+  <div class="work-item">
+    <div>
+      <p class="work-title">Pet Shop Boys</p>
+      <p class="work-desc">Website for the <em>Nightlife</em> album launch.</p>
+    </div>
+    <span class="work-year">1999</span>
+  </div>
+
+  <div class="work-item">
+    <div>
+      <p class="work-title">Domino's Denmark</p>
+      <p class="work-desc">First online pizza ordering site in Denmark.</p>
+    </div>
+    <span class="work-year">Late 1990s</span>
+  </div>
+
+  <div class="contact-section">
+    <hr class="divider">
+    <p class="geo-label section-label">Get in touch</p>
+    <p>Available for part-time and project-based work — AI workflow consulting, Shopify development, creative direction. Remote only.</p>
+    <form id="contact-form" novalidate>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+      <div class="form-row">
+        <div class="form-field">
+          <label class="field-label" for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label class="field-label" for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="field-label" for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="4" placeholder="What are you working on?" required></textarea>
+      </div>
+      <button type="submit" id="contact-submit">Send message</button>
+      <p id="contact-feedback" aria-live="polite"></p>
+    </form>
+  </div>
+
 </main>
+
+<footer>
+  <p class="geo-label">Sebastian Larsen · Copenhagen · larsen.studio</p>
+</footer>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById('contact-submit');
+  const feedback = document.getElementById('contact-feedback');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  feedback.textContent = '';
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:    form.name.value,
+        email:   form.email.value,
+        message: form.message.value,
+        website: form.website.value,
+      })
+    });
+
+    if (res.ok) {
+      feedback.textContent = 'Message sent. I\'ll be in touch.';
+      form.reset();
+    } else {
+      const data = await res.json();
+      feedback.textContent = data.error || 'Something went wrong.';
+    }
+  } catch {
+    feedback.textContent = 'Could not send. Try again later.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send message';
+  }
+});
+</script>
 </body>
 </html>
