@@ -35,6 +35,8 @@ html, body {
   position: fixed;
   left: 0;
   top: 0;
+  width: 50vw;
+  height: 100vh;
   display: block;
   z-index: 0;
 }
@@ -265,6 +267,7 @@ html, body {
 /* ─── MOBILE ──────────────────────────────────────────── */
 
 @media (max-width: 768px) {
+  #portrait { width: 100vw; }
   .panel { margin-left: 0; }
   .hero-name { font-size: clamp(3.5rem, 12vw, 5rem); }
   .form-row { grid-template-columns: 1fr; }
@@ -530,8 +533,6 @@ html, body {
     const DPR = window.devicePixelRatio || 1;
     canvas.width  = SIZE * DPR;
     canvas.height = SIZE * DPR;
-    canvas.style.width  = SIZE + 'px';
-    canvas.style.height = SIZE + 'px';
 
     const COLS = Math.floor(SIZE / CELL_W);
     const ROWS = Math.floor(SIZE / CELL_H);
