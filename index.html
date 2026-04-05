@@ -10,186 +10,171 @@
 <meta property="og:title" content="Sebastian Larsen — larsen.studio">
 <meta property="og:description" content="Building at the frontier of digital since 1999.">
 <meta property="og:url" content="https://larsen.studio">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --stone-900: #1c1917;
-  --stone-600: #57534e;
-  --stone-400: #a8a29e;
-  --stone-200: #e7e5e4;
-  --stone-50:  #fafaf9;
+  --black:  #000000;
+  --white:  #ffffff;
+  --orange: #FF5C00;
+  --pad:    clamp(2rem, 4vw, 5rem);
 }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #fff;
-  color: var(--stone-900);
+html, body {
+  height: 100%;
+  background: var(--black);
+  color: var(--white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* ─── FIXED PORTRAIT — sits under everything ──────────── */
+
+#portrait {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  z-index: 0;
+}
+
+/* ─── SCROLLABLE PANEL — starts at 50%, floats over portrait */
+
+.panel {
+  position: relative;
+  z-index: 1;
+  margin-left: 50vw;
   min-height: 100vh;
+}
+
+.panel-section {
+  padding: var(--pad);
+}
+
+/* ─── HERO ────────────────────────────────────────────── */
+
+.hero {
+  padding: clamp(3rem, 5vw, 5rem) var(--pad);
   display: flex;
   flex-direction: column;
+  gap: 0;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
-.geo-label {
+.site-id {
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--stone-400);
+  color: var(--orange);
 }
 
-header {
-  padding: 2.5rem 3rem;
-  border-bottom: 1px solid var(--stone-200);
+.hero-name {
+  font-size: clamp(2rem, 9vw, 12rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  color: var(--white);
+  margin: auto 0;
+  padding: 2rem 0;
+}
+
+.hero-foot {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.site-name {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  letter-spacing: 0.25em;
+.hero-available {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
 }
 
-.available-badge {
+.hero-location {
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #5c7a5c;
-  border: 1px solid #c4d4c4;
-  padding: 0.25rem 0.75rem;
+  color: var(--white);
 }
 
-main {
-  flex: 1;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 5rem 2rem 6rem;
-  width: 100%;
-}
-
-.hero {
-  margin-bottom: 5rem;
-}
-
-.hero-label {
-  margin-bottom: 1.5rem;
-}
-
-h1 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 300;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin-bottom: 2rem;
-}
-
-.hero-body {
-  font-size: 1rem;
+.hero-bio {
+  font-size: 0.9375rem;
   line-height: 1.8;
-  color: var(--stone-600);
-  max-width: 520px;
+  color: var(--white);
+  max-width: 44ch;
 }
 
-.divider {
-  border: none;
-  border-top: 1px solid var(--stone-200);
-  margin: 3.5rem 0;
+.hero-poem-credit {
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  font-style: italic;
 }
+
+/* ─── WORK SECTIONS ───────────────────────────────────── */
 
 .section-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
   margin-bottom: 2rem;
 }
 
 .work-item {
-  padding: 1.75rem 0;
-  border-top: 1px solid var(--stone-200);
+  padding: 1.5rem 0;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
-  align-start: top;
-}
-
-.work-item:last-child {
-  border-bottom: 1px solid var(--stone-200);
+  align-items: start;
 }
 
 .work-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+  color: var(--white);
 }
 
 .work-title a {
-  color: var(--stone-900);
+  color: var(--white);
   text-decoration: none;
 }
 
-.work-title a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+.work-title a:hover { color: var(--orange); }
 
 .work-desc {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   line-height: 1.7;
-  color: var(--stone-600);
+  color: var(--white);
 }
 
 .work-year {
-  font-size: 0.75rem;
-  color: var(--stone-400);
-  white-space: nowrap;
-  padding-top: 0.25rem;
-}
-
-.contact-section {
-  margin-top: 4rem;
-}
-
-.contact-section p {
-  font-size: 0.9375rem;
-  line-height: 1.8;
-  color: var(--stone-600);
-  margin-bottom: 1.25rem;
-}
-
-.contact-link {
-  display: inline-block;
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--stone-900);
-  text-decoration: none;
-  border-bottom: 1px solid var(--stone-900);
-  padding-bottom: 2px;
+  color: var(--orange);
+  white-space: nowrap;
+  padding-top: 0.2rem;
 }
 
-.contact-link:hover {
-  color: var(--stone-600);
-  border-color: var(--stone-600);
+/* ─── CONTACT ─────────────────────────────────────────── */
+
+.contact-intro {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--white);
+  margin-bottom: 2rem;
+  max-width: 44ch;
 }
 
-footer {
-  padding: 2rem 3rem;
-  border-top: 1px solid var(--stone-200);
-}
-
-footer p {
-  font-size: 0.75rem;
-  color: var(--stone-400);
-}
-
-/* Contact form */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -205,21 +190,22 @@ footer p {
 }
 
 .field-label {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--stone-400);
+  color: var(--orange);
 }
 
 #contact-form input,
 #contact-form textarea {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.9375rem;
-  color: var(--stone-900);
-  background: #fff;
-  border: 1px solid var(--stone-200);
-  padding: 0.75rem 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  padding: 0.75rem 0;
   outline: none;
   width: 100%;
   transition: border-color 0.15s;
@@ -228,170 +214,221 @@ footer p {
 
 #contact-form input::placeholder,
 #contact-form textarea::placeholder {
-  color: var(--stone-400);
+  color: #555;
 }
 
 #contact-form input:focus,
 #contact-form textarea:focus {
-  border-color: var(--stone-600);
+  border-color: var(--orange);
 }
 
-#contact-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
+#contact-form textarea { resize: vertical; min-height: 100px; }
 
 #contact-submit {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.6875rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #fff;
-  background: var(--stone-900);
+  color: var(--black);
+  background: var(--orange);
   border: none;
   padding: 0.875rem 2rem;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: opacity 0.15s;
 }
 
-#contact-submit:hover { background: var(--stone-600); }
-#contact-submit:disabled { background: var(--stone-400); cursor: default; }
+#contact-submit:hover { opacity: 0.85; }
+#contact-submit:disabled { opacity: 0.4; cursor: default; }
 
 #contact-feedback {
   margin-top: 1rem;
-  font-size: 0.875rem;
-  color: var(--stone-600);
+  font-size: 0.8125rem;
+  color: var(--white);
   min-height: 1.4rem;
 }
 
-@media (max-width: 600px) {
-  header { padding: 1.5rem; }
-  main { padding: 3rem 1.5rem 4rem; }
-  footer { padding: 1.5rem; }
-  .work-item { grid-template-columns: 1fr; }
-  .work-year { padding-top: 0; }
+/* ─── FOOTER ──────────────────────────────────────────── */
+
+.panel-footer {
+  padding: 2rem var(--pad);
+}
+
+.panel-footer p {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* ─── MOBILE ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .panel { margin-left: 0; }
+  .hero-name { font-size: clamp(3.5rem, 12vw, 5rem); }
   .form-row { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<header>
-  <span class="site-name">LARSEN.STUDIO</span>
-  <span class="available-badge">Available for projects</span>
-</header>
+<canvas id="portrait" aria-label="Portrait of Sebastian Larsen written in Kipling's Mandalay"></canvas>
 
-<main>
+<div class="panel">
 
-  <div class="hero">
-    <p class="geo-label hero-label">Copenhagen, Denmark</p>
-    <h1>Building at the<br>frontier of digital<br>since 1999.</h1>
-    <p class="hero-body">
-      Building digital things since a Commodore 64 in 1987. From the first online pizza ordering site in Denmark to Pet Shop Boys to four years as Creative Director in New Delhi. Now building property intelligence for Japan and publishing peer-reviewed research on building safety. Creative director by instinct, builder by necessity.
-    </p>
-  </div>
+  <!-- HERO -->
+  <section class="hero">
+    <p class="site-id">Larsen.Studio</p>
 
-  <div class="section-label">
-    <p class="geo-label">Current work</p>
-  </div>
+    <h1 class="hero-name">Sebastian<br>Larsen.</h1>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title"><a href="https://apps.shopify.com/cartgoals">CartGoals</a></p>
-      <p class="work-desc">Shopify app. Gamified cart goals that show customers how close they are to a reward — free shipping, discount, gift. Live on the Shopify App Store.</p>
+    <div class="hero-foot">
+      <p class="hero-available">Available for projects</p>
+      <p class="hero-location">Copenhagen &mdash; Since 1999</p>
+      <p class="hero-bio">
+        Building digital things since a Commodore 64 in 1987. From the first
+        online pizza ordering site in Denmark to Pet Shop Boys to four years
+        as Creative Director in New Delhi. Now building property intelligence
+        for Japan, sports scheduling tools, and publishing pre-publication
+        research on building safety. Creative director by instinct,
+        builder by necessity.
+      </p>
+      <p class="hero-poem-credit">Portrait written in Kipling&rsquo;s Mandalay, 1890</p>
     </div>
-    <span class="work-year">2026–</span>
-  </div>
+  </section>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title"><a href="https://yudane.com">Yudane</a></p>
-      <p class="work-desc">Property intelligence for foreign buyers of Japanese real estate. 314 listings from 11 sources, peer-reviewed risk analysis (asbestos, termite, radon, earthquake), government-grade open datasets for Fukuoka Prefecture. Published methodology on medRxiv.</p>
+  <!-- CURRENT WORK -->
+  <section class="panel-section">
+    <p class="section-label">Current work</p>
+
+    <div class="work-item">
+      <div>
+        <p class="work-title"><a href="https://apps.shopify.com/cartgoals">CartGoals</a></p>
+        <p class="work-desc">Shopify app. Gamified cart goals that show customers how close they are to a reward — free shipping, discount, gift. Live on the Shopify App Store.</p>
+      </div>
+      <span class="work-year">2026–</span>
     </div>
-    <span class="work-year">2026–</span>
-  </div>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title"><a href="https://whatisthetime.now">whatisthetime.now</a></p>
-      <p class="work-desc">World clock and timezone reference. 990 cities, 245 countries, editorial content for every timezone on Earth. Meeting planner. Proton VPN partnership.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title"><a href="https://yudane.com">Yudane</a></p>
+        <p class="work-desc">Property intelligence for foreign buyers of Japanese real estate. 314 listings from 11 sources, peer-reviewed risk analysis (asbestos, termite, radon, earthquake). Published methodology on medRxiv.</p>
+      </div>
+      <span class="work-year">2026–</span>
     </div>
-    <span class="work-year">2026–</span>
-  </div>
 
-  <hr class="divider">
-
-  <div class="section-label">
-    <p class="geo-label">Publications</p>
-  </div>
-
-  <div class="work-item">
-    <div>
-      <p class="work-title"><a href="https://yudane.com/intelligence/asbestos/">A Construction-Era Asbestos Risk Index for Residential Districts in Fukuoka Prefecture</a></p>
-      <p class="work-desc">District-level asbestos risk scores for 1,360 districts across 51 municipalities. Preprint on medRxiv. CC BY 4.0.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title"><a href="https://whatisthetime.now">whatisthetime.now</a></p>
+        <p class="work-desc">World clock and timezone reference. 990 cities, 245 countries, editorial content for every timezone on Earth. Meeting planner. Proton VPN partnership.</p>
+      </div>
+      <span class="work-year">2026–</span>
     </div>
-    <span class="work-year">2026</span>
-  </div>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title"><a href="https://yudane.com/intelligence/termite-risk-model/">A Cross-National Termite Damage Probability Model for Wooden Residential Buildings</a></p>
-      <p class="work-desc">Age-based termite damage model calibrated against MLIT 2013 national survey. Applied to 314 akiya in Fukuoka. Preprint on medRxiv. CC BY 4.0.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title"><a href="https://whensport.com">whensport.com</a></p>
+        <p class="work-desc">Sports schedule in your timezone. Every F1 race, football fixture, Grand Slam, and major sporting event shown in local time.</p>
+      </div>
+      <span class="work-year">2026–</span>
     </div>
-    <span class="work-year">2026</span>
-  </div>
+  </section>
 
-  <hr class="divider">
+  <!-- PUBLICATIONS -->
+  <section class="panel-section">
+    <p class="section-label">Publications</p>
 
-  <div class="section-label">
-    <p class="geo-label">Selected past work</p>
-  </div>
-
-  <div class="work-item">
-    <div>
-      <p class="work-title">Creative Director — New Delhi</p>
-      <p class="work-desc">Creative Director at Business Images, New Delhi. Visual identity programmes and consulting for Nexus Enterprise (Bates Asia). Four years living and working in India.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title"><a href="https://yudane.com/intelligence/asbestos/">A Construction-Era Asbestos Risk Index for Residential Districts in Fukuoka Prefecture</a></p>
+        <p class="work-desc">District-level asbestos risk scores for 1,360 districts across 51 municipalities. Preprint on medRxiv. CC BY 4.0.</p>
+      </div>
+      <span class="work-year">2026</span>
     </div>
-    <span class="work-year">2004–07</span>
-  </div>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title">Ampower</p>
-      <p class="work-desc">Free iOS and Android app built during the European energy crisis. Helped households track and reduce energy consumption. Translated into all major European languages.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title"><a href="https://yudane.com/intelligence/termite-risk-model/">A Cross-National Termite Damage Probability Model for Wooden Residential Buildings</a></p>
+        <p class="work-desc">Age-based termite damage model calibrated against MLIT 2013 national survey. Applied to 314 akiya in Fukuoka. Preprint on medRxiv. CC BY 4.0.</p>
+      </div>
+      <span class="work-year">2026</span>
     </div>
-    <span class="work-year">2022–23</span>
-  </div>
+  </section>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title">Praesense</p>
-      <p class="work-desc">Own design studio. Clients included Universal Music, EMI, Metronome, Domino's Pizza, and the Danish Film Directors association.</p>
+  <!-- SELECTED PAST WORK -->
+  <section class="panel-section">
+    <p class="section-label">Selected past work</p>
+
+    <div class="work-item">
+      <div>
+        <p class="work-title">Creative Director — New Delhi</p>
+        <p class="work-desc">Creative Director at Business Images, New Delhi. Visual identity programmes and consulting for Nexus Enterprise (Bates Asia). Four years living and working in India.</p>
+      </div>
+      <span class="work-year">2004–07</span>
     </div>
-    <span class="work-year">1999–2001</span>
-  </div>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title">Pet Shop Boys</p>
-      <p class="work-desc">Website for the <em>Nightlife</em> album launch.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title">Ampower</p>
+        <p class="work-desc">Free iOS and Android app built during the European energy crisis. Helped households track and reduce energy consumption. Translated into all major European languages.</p>
+      </div>
+      <span class="work-year">2022–23</span>
     </div>
-    <span class="work-year">1999</span>
-  </div>
 
-  <div class="work-item">
-    <div>
-      <p class="work-title">Domino's Denmark</p>
-      <p class="work-desc">First online pizza ordering site in Denmark.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title">Corporate Culture — Liverpool</p>
+        <p class="work-desc">Graphic design for magazine front pages and covers.</p>
+      </div>
+      <span class="work-year">2001</span>
     </div>
-    <span class="work-year">Late 1990s</span>
-  </div>
 
-  <div class="contact-section">
-    <hr class="divider">
-    <p class="geo-label section-label">Get in touch</p>
-    <p>Available for part-time and project-based work — AI workflow consulting, Shopify development, creative direction. Remote only.</p>
+    <div class="work-item">
+      <div>
+        <p class="work-title">Praesense</p>
+        <p class="work-desc">Own design studio. Clients included Universal Music, EMI, Metronome, Domino's Pizza, and the Danish Film Directors association.</p>
+      </div>
+      <span class="work-year">1999–2001</span>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <p class="work-title">Pet Shop Boys</p>
+        <p class="work-desc">Website for the <em>Nightlife</em> album launch.</p>
+      </div>
+      <span class="work-year">1999</span>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <p class="work-title">OffBit — Copenhagen</p>
+        <p class="work-desc">Assistant Art Director under Rasmus Skjoldan, who made me a disciple of Josef Müller-Brockmann. Magazine layout, print advertising, web design. Learned HTML and CSS here.</p>
+      </div>
+      <span class="work-year">1998</span>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <p class="work-title">Nat&amp;Dag</p>
+        <p class="work-desc">Games editor. Concurrent with OffBit.</p>
+      </div>
+      <span class="work-year">1998</span>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <p class="work-title">Domino's Denmark</p>
+        <p class="work-desc">First online pizza ordering site in Denmark.</p>
+      </div>
+      <span class="work-year">Late 1990s</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="panel-section">
+    <p class="section-label">Get in touch</p>
+    <p class="contact-intro">Available for part-time and project-based work — AI workflow consulting, Shopify development, creative direction. Remote only.</p>
     <form id="contact-form" novalidate>
       <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
       <div class="form-row">
@@ -411,51 +448,217 @@ footer p {
       <button type="submit" id="contact-submit">Send message</button>
       <p id="contact-feedback" aria-live="polite"></p>
     </form>
-  </div>
+  </section>
 
-</main>
+  <footer class="panel-footer">
+    <p>Sebastian Larsen &middot; Copenhagen &middot; larsen.studio</p>
+  </footer>
 
-<footer>
-  <p class="geo-label">Sebastian Larsen · Copenhagen · larsen.studio</p>
-</footer>
+</div>
 
 <script>
+// ─── TYPOGRAPHIC PORTRAIT — MANDALAY ──────────────────────────────────────
+//
+// The portrait is written entirely in Kipling's Mandalay (1890).
+// Three colors only: white (#fff) for the face, orange (#FF5C00) for highlights,
+// black (#000) background where the image is dark.
+// From a distance: a face. Up close: a poem about going East.
+
+(function () {
+  const CELL_W    = 3;
+  const CELL_H    = 5;
+  const FONT_SIZE = 4;
+  const SIZE      = Math.min(1000, window.innerWidth);
+  const BG_THRESH = 20;
+  const SCROLL_SPD = 1.5; // poem chars advanced per viewport px scrolled
+
+  // ── Mandalay — Rudyard Kipling, 1890 ──────────────────────────────────
+  // Uppercase, no punctuation. Characters are pixels here, not words.
+  // One line glows orange. It will find you as you scroll.
+
+  // CYCLE is arranged so the highlight sits at column ~170 at offset=0
+  // — dead centre of the face, visible on first load, sweeps left as you scroll.
+  // HL_S is hard-coded to match the construction below (no indexOf fragility).
+
+  const HIGHLIGHT =
+    'IF YOUVE EARD THE EAST A CALLIN YOU WONT NEVER EED NAUGHT ELSE ';
+
+  // ~171 chars before the highlight → HL_S = 171
+  const PRE =
+    'BY THE OLD MOULMEIN PAGODA LOOKIN LAZY AT THE SEA ' +          // 51
+    'THERES A BURMA GIRL A SETTIN AN I KNOW SHE THINKS O ME ' +     // 56
+    'FOR THE WIND IS IN THE PALM TREES AN THE TEMPLE BELLS THEY SAY '; // 64 → 171
+
+  const POST =
+    'COME YOU BACK YOU BRITISH SOLDIER COME YOU BACK TO MANDALAY ' +
+    'COME YOU BACK TO MANDALAY WHERE THE OLD FLOTILLA LAY ' +
+    'CANT YOU EAR THEIR PADDLES CHUNKIN FROM RANGOON TO MANDALAY ' +
+    'ON THE ROAD TO MANDALAY WHERE THE FLYIN FISHES PLAY ' +
+    'AN THE DAWN COMES UP LIKE THUNDER OUTER CHINA CROSS THE BAY ' +
+    'ER PETTICOAT WAS YALLER AN ER LITTLE CAP WAS GREEN ' +
+    'AN ER NAME WAS SUPI YAWLAT SAME AS THEEBAW QUEEN ' +
+    'AN I SEED HER FIRST A SMOKIN OF A WHACKIN WHITE CHEROOT ' +
+    'PLUCKY LOT SHE CARED FOR IDOLS WHEN I KISSED ER WHERE SHE STUD ' +
+    'ON THE ROAD TO MANDALAY WHERE THE FLYIN FISHES PLAY ' +
+    'AN THE DAWN COMES UP LIKE THUNDER OUTER CHINA CROSS THE BAY ' +
+    'WHEN THE MIST WAS ON THE RICE FIELDS AN THE SUN WAS DROPPIN SLOW ' +
+    'WITH ER ARM UPON MY SHOULDER AN ER CHEEK AGIN MY CHEEK ' +
+    'WE USETER WATCH THE STEAMERS AN THE HATHIS PILIN TEAK ' +
+    'ON THE ROAD TO MANDALAY WHERE THE FLYIN FISHES PLAY ' +
+    'AN THE DAWN COMES UP LIKE THUNDER OUTER CHINA CROSS THE BAY ' +
+    'BUT THATS ALL SHOVE BEIND ME LONG AGO AN FAR AWAY ' +
+    'AN THERE AINT NO BUSES RUNNIN FROM THE BANK TO MANDALAY ' +
+    'AN IVE LEARNT ABOUT THE EAST WHAT THE TEN YEAR SOLDIER TELLS ' +
+    'ON THE ROAD TO MANDALAY WHERE THE FLYIN FISHES PLAY ' +
+    'AN THE DAWN COMES UP LIKE THUNDER OUTER CHINA CROSS THE BAY ' +
+    'SHIP ME SOMEWHERES EAST OF SUEZ WHERE THE BEST IS LIKE THE WORST ' +
+    'WHERE THERE AINT NO TEN COMMANDMENTS AN A MAN CAN RAISE A THIRST ' +
+    'FOR THE TEMPLE BELLS ARE CALLIN AN ITS THERE THAT I WOULD BE ' +
+    'BY THE OLD MOULMEIN PAGODA LOOKIN LAZY AT THE SEA ' +
+    'ON THE ROAD TO MANDALAY WHERE THE FLYIN FISHES PLAY ' +
+    'AN THE DAWN COMES UP LIKE THUNDER OUTER CHINA CROSS THE BAY ';
+
+  const CYCLE = PRE + HIGHLIGHT + POST;
+  const C_LEN = CYCLE.length;
+  const HL_S  = PRE.length;          // 171 — known, not computed
+  const HL_E  = HL_S + HIGHLIGHT.length;
+
+  async function init() {
+    const canvas = document.getElementById('portrait');
+    if (!canvas) return;
+
+    const DPR = window.devicePixelRatio || 1;
+    canvas.width  = SIZE * DPR;
+    canvas.height = SIZE * DPR;
+    canvas.style.width  = SIZE + 'px';
+    canvas.style.height = SIZE + 'px';
+
+    const COLS = Math.floor(SIZE / CELL_W);
+    const ROWS = Math.floor(SIZE / CELL_H);
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = 'seb.jpg';
+    try {
+      await new Promise((res, rej) => { img.onload = res; img.onerror = rej; });
+    } catch { return; }
+
+    const cropY    = Math.floor(img.height * 0.08);
+    const cropSide = img.height - cropY;
+    const cropX    = Math.floor((img.width - cropSide) / 2);
+
+    const offscreen = document.createElement('canvas');
+    offscreen.width  = COLS;
+    offscreen.height = ROWS;
+    const octx = offscreen.getContext('2d');
+    octx.drawImage(img, cropX, cropY, cropSide, cropSide, 0, 0, COLS, ROWS);
+    const { data } = octx.getImageData(0, 0, COLS, ROWS);
+
+    // Pre-compute visible cells — brightness is fixed, only character changes on scroll
+    const cells = [];
+    for (let row = 0; row < ROWS; row++) {
+      for (let col = 0; col < COLS; col++) {
+        const i = (row * COLS + col) * 4;
+        const g = Math.round((data[i] + data[i+1] + data[i+2]) / 3);
+        if (g >= BG_THRESH) cells.push({ col, row, g });
+      }
+    }
+
+    const ctx = canvas.getContext('2d');
+    ctx.scale(DPR, DPR);
+    ctx.font = `${FONT_SIZE}px "Courier New", monospace`;
+    ctx.textBaseline = 'top';
+
+    // Pre-allocate buckets — reused every frame, zero GC pressure
+    const grey   = Array.from({ length: 256 }, () => []);
+    const orange = [];
+
+    function render(offset) {
+      const io = ((Math.floor(offset) % C_LEN) + C_LEN) % C_LEN;
+
+      for (let i = 0; i < 256; i++) grey[i].length = 0;
+      orange.length = 0;
+
+      for (const { col, row, g } of cells) {
+        const pi = (col + io) % C_LEN;
+        const ch = CYCLE[pi];
+        if (pi >= HL_S && pi < HL_E) {
+          orange.push({ col, row, ch });
+        } else {
+          grey[g].push({ col, row, ch });
+        }
+      }
+
+      ctx.clearRect(0, 0, SIZE, SIZE);
+
+      for (let g = BG_THRESH; g < 256; g++) {
+        if (!grey[g].length) continue;
+        ctx.fillStyle = `rgb(${g},${g},${g})`;
+        for (const { col, row, ch } of grey[g]) {
+          ctx.fillText(ch, col * CELL_W, row * CELL_H);
+        }
+      }
+
+      if (orange.length) {
+        ctx.fillStyle = '#FF5C00';
+        for (const { col, row, ch } of orange) {
+          ctx.fillText(ch, col * CELL_W, row * CELL_H);
+        }
+      }
+    }
+
+    render(0);
+
+    // Scroll-driven: one RAF per scroll event, freezes when still
+    let rafId  = null;
+    let scrollOff = 0;
+
+    window.addEventListener('scroll', () => {
+      scrollOff = window.scrollY * SCROLL_SPD;
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          render(scrollOff);
+          rafId = null;
+        });
+      }
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<script>
+// ─── CONTACT FORM ──────────────────────────────────────────────────────────
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
-  const btn = document.getElementById('contact-submit');
-  const feedback = document.getElementById('contact-feedback');
+  const btn  = document.getElementById('contact-submit');
+  const fb   = document.getElementById('contact-feedback');
 
   btn.disabled = true;
   btn.textContent = 'Sending…';
-  feedback.textContent = '';
+  fb.textContent = '';
 
   try {
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name:    form.name.value,
-        email:   form.email.value,
-        message: form.message.value,
-        website: form.website.value,
+        name: form.name.value, email: form.email.value,
+        message: form.message.value, website: form.website.value,
       })
     });
-
-    if (res.ok) {
-      feedback.textContent = 'Message sent. I\'ll be in touch.';
-      form.reset();
-    } else {
-      const data = await res.json();
-      feedback.textContent = data.error || 'Something went wrong.';
-    }
-  } catch {
-    feedback.textContent = 'Could not send. Try again later.';
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Send message';
-  }
+    if (res.ok) { fb.textContent = 'Message sent. I\'ll be in touch.'; form.reset(); }
+    else { const d = await res.json(); fb.textContent = d.error || 'Something went wrong.'; }
+  } catch { fb.textContent = 'Could not send. Try again later.'; }
+  finally { btn.disabled = false; btn.textContent = 'Send message'; }
 });
 </script>
+
 </body>
 </html>
