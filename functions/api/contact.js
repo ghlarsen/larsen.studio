@@ -2,7 +2,7 @@
  * Contact form handler
  * Cloudflare Pages Function
  *
- * Receives contact form submissions, validates, sends to Slack
+ * Receives contact form submissions, validates, sends ntfy push notification
  */
 
 export async function onRequestPost({ request, env }) {
@@ -51,44 +51,23 @@ export async function onRequestPost({ request, env }) {
     email   = email.trim().toLowerCase().slice(0, 254);
     message = message.trim().slice(0, 2000);
 
-    const slackWebhook = env.SLACK_WEBHOOK_URL;
-    if (!slackWebhook) {
-      console.error('SLACK_WEBHOOK_URL not configured');
-      return new Response(JSON.stringify({ success: true }), { status: 200, headers });
-    }
-
-    const slackMessage = {
-      blocks: [
-        {
-          type: 'header',
-          text: { type: 'plain_text', text: '✉️ New message — larsen.studio', emoji: true }
-        },
-        {
-          type: 'section',
-          fields: [
-            { type: 'mrkdwn', text: `*From:*\n${name}` },
-            { type: 'mrkdwn', text: `*Email:*\n${email}` }
-          ]
-        },
-        {
-          type: 'section',
-          text: { type: 'mrkdwn', text: `*Message:*\n${message}` }
-        },
-        {
-          type: 'context',
-          elements: [{ type: 'mrkdwn', text: `Sent: ${new Date().toISOString()}` }]
-        }
-      ]
-    };
-
-    const slackResponse = await fetch(slackWebhook, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(slackMessage)
-    });
-
-    if (!slackResponse.ok) {
-      console.error('Slack webhook failed:', await slackResponse.text());
+    // Send ntfy push notification
+    const ntfyTopic = env.NTFY_TOPIC;
+    if (ntfyTopic) {
+      try {
+        await fetch(`https://ntfy.sh/${ntfyTopic}`, {
+          method: 'POST',
+          headers: {
+            'Title': `Message from ${name}`,
+            'Priority': 'high',
+            'Tags': 'envelope',
+            'Content-Type': 'text/plain',
+          },
+          body: `${email}\n\n${message}`,
+        });
+      } catch (ntfyError) {
+        console.error('ntfy error:', ntfyError);
+      }
     }
 
     return new Response(JSON.stringify({ success: true }), { status: 200, headers });
